@@ -10,6 +10,8 @@ import { HomeComponent } from './home/home.component'
 import { AboutComponent } from './about/about.component';
 import { RouterModule } from '@angular/router';
 import { ROUTES } from './app.routers';
+import { RestaurantsComponent } from './restaurants/restaurants.component';
+import { RestaurantComponent } from './restaurants/restaurant/restaurant.component';
 
 
 @NgModule({
@@ -18,7 +20,9 @@ import { ROUTES } from './app.routers';
     HeaderComponent,
     FooterComponent,
     HomeComponent,
-    AboutComponent
+    AboutComponent,
+    RestaurantsComponent,
+    RestaurantComponent,
   ],
   imports: [
     BrowserModule,
