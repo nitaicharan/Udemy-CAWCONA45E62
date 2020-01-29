@@ -12,6 +12,7 @@ import { RouterModule } from '@angular/router';
 import { ROUTES } from './app.routers';
 import { RestaurantsComponent } from './restaurants/restaurants.component';
 import { RestaurantComponent } from './restaurants/restaurant/restaurant.component';
+import { RestaurantsService } from './restaurants/restaurants.service';
 
 
 @NgModule({
@@ -29,7 +30,7 @@ import { RestaurantComponent } from './restaurants/restaurant/restaurant.compone
     HttpModule,
     RouterModule.forRoot(ROUTES)
   ],
-  providers: [],
+  providers: [RestaurantsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
