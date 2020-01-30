@@ -15,4 +15,9 @@ export class ShoppingCartComponent implements OnInit {
   items = (): any[] => this.service.items;
 
   total = (): any => this.service.total();
+
+  clear = () => this.service.clear();
+
+  delItem = (item :any) => this.service.removeItem(item);
+  addItem = (item :any) => this.service.addItem(item);
 }
