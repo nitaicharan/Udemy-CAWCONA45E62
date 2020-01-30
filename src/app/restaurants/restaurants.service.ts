@@ -25,4 +25,10 @@ export class RestaurantsService {
       .get(`${MEAT_API}`)
       .map(response => response.json().restaurants.find((restaurant: { id: string; }) => restaurant.id === id))
       .catch(ErrorHandler.handleError);
+
+  getReviews = (id: string): Observable<any> =>
+  this.http
+    .get(`${MEAT_API}`)
+    .map(response => response.json().reviews.filter(review => review.restaurantId === id))
+    .catch(ErrorHandler.handleError);
 }
