@@ -23,14 +23,15 @@
         <div class="col-sm-6 col-xs-12">
           <div class="form-group">
             <label class="control-label sr-only" for="inputSuccess"><i class="fa fa-check"></i> Endereço</label>
-            <input name="address" ngModel type="text" class="form-control" id="inputSuccess" placeholder="Endereço">
+            <input name="address" ngModel required minlength="5" type="text" class="form-control" id="inputSuccess"
+              placeholder="Endereço" autocomplete="false">
             <span class="help-block"></span>
           </div>
         </div>
         <div class="col-sm-2 col-xs-6">
           <div class="form-group has-success">
             <label class="control-label sr-only" for="inputSuccess"><i class="fa fa-check"></i> Número</label>
-            <input name="number" ngModel type="text" class="form-control" id="inputSuccess" placeholder="Número">
+            <input name="number" ngModel required type="text" class="form-control" id="inputSuccess" placeholder="Número" autocomplete="false">
             <span class="help-block"><i class="fa fa-check"></i> Ok</span>
           </div>
         </div>
@@ -163,9 +164,9 @@
 
     <div class="row">
       <div class="col-xs-12">
-        <a href="order-summary.html" class="btn btn-success pull-right"><i class="fa fa-credit-card"></i> Concluir
+        <button href="order-summary.html" class="btn btn-success pull-right" [disabled]="form.invalid"><i class="fa fa-credit-invalid"></i> Concluir
           Pedido
-        </a>
+        </button>
       </div>
     </div>
 
