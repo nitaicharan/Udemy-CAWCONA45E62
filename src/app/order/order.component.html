@@ -26,13 +26,13 @@
               placeholder="Endereço" autocomplete="false">
           </mt-input-contaner>
         </div>
-        <div class="col-sm-2 col-xs-6">
-          <mt-input-contaner errorMessage="Número é obrigatório" label="Número">
-            <input name="number" ngModel required #intNumber="ngModel" type="text" class="form-control"
+        <div class="col-sm-3 col-xs-6">
+          <mt-input-contaner errorMessage="Obrigagório e somente números" label="Número">
+            <input name="number" ngModel required #intNumber="ngModel" pattern="^[0-9]*$" type="text" class="form-control"
               id="inputSuccess" placeholder="Número" autocomplete="false">
           </mt-input-contaner>
         </div>
-        <div class="col-sm-4 col-xs-6">
+        <div class="col-sm-3 col-xs-6">
           <mt-input-contaner>
             <input name="optional" ngModel type="text" class="form-control" id="inputSuccess" placeholder="Complemento">
           </mt-input-contaner>
