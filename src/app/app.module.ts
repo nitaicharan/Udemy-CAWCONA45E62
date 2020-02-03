@@ -23,6 +23,8 @@ import { OrderComponent } from './order/order.component';
 import { FormsModule } from "@angular/forms";
 import { InputContanerComponent } from './shared/input-contaner/input-contaner.component';
 import { RadioComponent } from './radio/radio.component';
+import { OrderItemsComponent } from './order/order-items/order-items.component';
+import { OrderService } from './order/order.service';
 
 
 @NgModule({
@@ -42,6 +44,7 @@ import { RadioComponent } from './radio/radio.component';
     OrderComponent,
     InputContanerComponent,
     RadioComponent,
+    OrderItemsComponent,
   ],
   imports: [
     BrowserModule,
@@ -49,7 +52,11 @@ import { RadioComponent } from './radio/radio.component';
     RouterModule.forRoot(ROUTES),
     FormsModule,
   ],
-  providers: [RestaurantsService, ShoppingCartService, {provide: LOCALE_ID, useValue: 'pt-BR'}],
+  providers: [
+    RestaurantsService,
+    ShoppingCartService,
+    { provide: LOCALE_ID, useValue: 'pt-BR' },
+    OrderService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
