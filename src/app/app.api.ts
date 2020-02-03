@@ -1,1 +1,1 @@
-export const MEAT_API = 'https://raw.githubusercontent.com/nitaicharan/Udemy-CAWCONA45E62/master/db.json';
+export const MEAT_API = 'https://my-json-server.typicode.com/nitaicharan/Udemy-CAWCONA45E62/';
