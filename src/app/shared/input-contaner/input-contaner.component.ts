@@ -1,13 +1,13 @@
 import { Component, OnInit, ContentChild, Input, AfterContentInit } from '@angular/core';
-import { NgModel } from '@angular/forms';
+import { NgModel, FormControlName } from '@angular/forms';
 
 @Component({
   selector: 'mt-input-contaner',
-  templateUrl: './input-contaner.component.html',
-  styleUrls: ['./input-contaner.component.css']
+  templateUrl: './input-contaner.component.html'
 })
 export class InputContanerComponent implements OnInit, AfterContentInit {
   @ContentChild(NgModel) model: NgModel;
+  @ContentChild(FormControlName) control: FormControlName;
   @Input() errorMessage: string
   @Input() label: string
   input: any;
@@ -20,10 +20,10 @@ export class InputContanerComponent implements OnInit, AfterContentInit {
   hasSuccess = (): boolean => this.input.valid && (this.input.dirty || this.input.touched);
   hasError = (): boolean => this.input.invalid && (this.input.dirty || this.input.touched);
 
-  ngAfterContentInit():void {
-    this.input = this.model;
+  ngAfterContentInit(): void {
+    this.input = this.model || this.control
     if (!this.input === undefined) {
-      throw new Error('Esse componente precisa ser usado com uma directiva ngModel')
+      throw new Error('Esse componente precisa ser usado com uma directiva NgModel ou FormControlName')
     }
   }
 }

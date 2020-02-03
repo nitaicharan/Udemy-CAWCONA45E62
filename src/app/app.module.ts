@@ -1,7 +1,8 @@
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { BrowserModule } from '@angular/platform-browser';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { HttpModule } from '@angular/http';
-import { NgModule, LOCALE_ID } from '@angular/core';
 
 
 import { RestaurantsComponent } from './restaurants/restaurants.component';
@@ -20,7 +21,6 @@ import { MenuItemComponent } from './restaurant-detail/menu-item/menu-item.compo
 import { ReviewsComponent } from './restaurant-detail/reviews/reviews.component';
 import { ShoppingCartService } from './restaurant-detail/shopping-cart/shopping-cart.service';
 import { OrderComponent } from './order/order.component';
-import { FormsModule } from "@angular/forms";
 import { InputContanerComponent } from './shared/input-contaner/input-contaner.component';
 import { RadioComponent } from './radio/radio.component';
 import { OrderItemsComponent } from './order/order-items/order-items.component';
@@ -57,6 +57,7 @@ import { RatingComponent } from './shared/rating/rating.component';
     HttpModule,
     RouterModule.forRoot(ROUTES),
     FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     RestaurantsService,
