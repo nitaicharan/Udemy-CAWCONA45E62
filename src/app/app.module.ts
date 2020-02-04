@@ -7,7 +7,6 @@ import { HttpModule } from '@angular/http';
 
 import { RestaurantsComponent } from './restaurants/restaurants.component';
 import { RestaurantComponent } from './restaurants/restaurant/restaurant.component';
-import { RestaurantsService } from './restaurants/restaurants.service';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component'
@@ -18,10 +17,9 @@ import { MenuComponent } from './restaurant-detail/menu/menu.component';
 import { ShoppingCartComponent } from './restaurant-detail/shopping-cart/shopping-cart.component';
 import { MenuItemComponent } from './restaurant-detail/menu-item/menu-item.component';
 import { ReviewsComponent } from './restaurant-detail/reviews/reviews.component';
-import { ShoppingCartService } from './restaurant-detail/shopping-cart/shopping-cart.service';
-import { OrderService } from './order/order.service';
 import { OrderSummaryComponent } from './order-summary/order-summary.component';
 import { SharedModule } from "./shared/shared.modele";
+import { CoreModule } from "./core/core.module";
 
 
 @NgModule({
@@ -45,13 +43,12 @@ import { SharedModule } from "./shared/shared.modele";
     RouterModule.forRoot(ROUTES),
     FormsModule,
     ReactiveFormsModule,
+    CoreModule,
     SharedModule
   ],
   providers: [
-    RestaurantsService,
-    ShoppingCartService,
     { provide: LOCALE_ID, useValue: 'pt-BR' },
-    OrderService],
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
