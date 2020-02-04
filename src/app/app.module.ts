@@ -10,7 +10,6 @@ import { RestaurantComponent } from './restaurants/restaurant/restaurant.compone
 import { RestaurantsService } from './restaurants/restaurants.service';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component'
 import { AppComponent } from './app.component';
 import { ROUTES } from './app.routers';
@@ -36,7 +35,6 @@ import { RatingComponent } from './shared/rating/rating.component';
     HeaderComponent,
     FooterComponent,
     HomeComponent,
-    AboutComponent,
     RestaurantsComponent,
     RestaurantComponent,
     RestaurantDetailComponent,
