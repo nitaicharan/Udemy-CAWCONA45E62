@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { ShoppingCartService } from "app/core/shopping-cart.service";
+import { ShoppingCartService } from "app/shared/shopping-cart.service";
 import { CartItem } from "app/restaurant-detail/shopping-cart/cart-item.model";
 import { Order } from "../order/order.model";
 import { Observable } from "rxjs/Observable";

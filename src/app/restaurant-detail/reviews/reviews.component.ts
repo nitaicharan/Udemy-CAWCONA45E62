@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { RestaurantsService } from 'app/core/restaurants.service';
+import { RestaurantsService } from 'app/shared/restaurants.service';
 import { Observable } from 'rxjs/Observable';
 
 @Component({

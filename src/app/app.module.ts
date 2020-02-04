@@ -19,7 +19,6 @@ import { MenuItemComponent } from './restaurant-detail/menu-item/menu-item.compo
 import { ReviewsComponent } from './restaurant-detail/reviews/reviews.component';
 import { OrderSummaryComponent } from './order-summary/order-summary.component';
 import { SharedModule } from "./shared/shared.modele";
-import { CoreModule } from "./core/core.module";
 
 
 @NgModule({
@@ -43,11 +42,7 @@ import { CoreModule } from "./core/core.module";
     RouterModule.forRoot(ROUTES),
     FormsModule,
     ReactiveFormsModule,
-    CoreModule,
-    SharedModule
-  ],
-  providers: [
-    { provide: LOCALE_ID, useValue: 'pt-BR' },
+    SharedModule.forRoot()
   ],
   bootstrap: [AppComponent]
 })
