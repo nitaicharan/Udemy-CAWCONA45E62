@@ -2,7 +2,7 @@ import { NgModule } from "@angular/core";
 import { DeliveryCostsComponent } from "./delivery-costs/delivery-costs.component";
 import { OrderItemsComponent } from "./order-items/order-items.component";
 import { OrderComponent } from "./order.component";
-import { SharedModule } from "app/shared/shared.modele";
+import { SharedModule } from "app/shared/shared.module";
 import { CommonModule } from "@angular/common";
 import { Routes, RouterModule } from "@angular/router";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";

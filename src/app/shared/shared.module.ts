@@ -7,23 +7,27 @@ import { CommonModule } from "@angular/common";
 import { OrderService } from "./order.service";
 import { RestaurantsService } from "./restaurants.service";
 import { ShoppingCartService } from "./shopping-cart.service";
+import { SnackbarComponent } from "./messages/snackbar/snackbar.component";
+import { NotificationService } from "./messages/notification.service";
 
 
 @NgModule({
   declarations: [
     InputContanerComponent,
     RatingComponent,
-    RadioComponent
+    RadioComponent,
+    SnackbarComponent
   ],
   imports: [
     FormsModule,
     ReactiveFormsModule,
-    CommonModule
+    CommonModule,
   ],
   exports: [
     InputContanerComponent,
     RatingComponent,
-    RadioComponent
+    RadioComponent,
+    SnackbarComponent
   ]
 })
 export class SharedModule {
@@ -34,6 +38,7 @@ export class SharedModule {
         OrderService,
         RestaurantsService,
         ShoppingCartService,
+        NotificationService,
         { provide: LOCALE_ID, useValue: 'pt-BR' },
       ]
     }
