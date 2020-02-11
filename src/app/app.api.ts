@@ -1,1 +1,3 @@
-export const MEAT_API = 'https://my-json-server.typicode.com/nitaicharan/Udemy-CAWCONA45E62/';
+import { environment } from "environments/environment";
+
+export const MEAT_API = environment.api;
