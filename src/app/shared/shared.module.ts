@@ -1,4 +1,4 @@
-import { NgModule, ModuleWithProviders, LOCALE_ID } from "@angular/core";
+import { NgModule, ModuleWithProviders } from "@angular/core";
 import { InputContanerComponent } from "./input-contaner/input-contaner.component";
 import { RatingComponent } from "./rating/rating.component";
 import { RadioComponent } from "./radio/radio.component";
@@ -39,7 +39,6 @@ export class SharedModule {
         RestaurantsService,
         ShoppingCartService,
         NotificationService,
-        { provide: LOCALE_ID, useValue: 'pt-BR' },
       ]
     }
   }
