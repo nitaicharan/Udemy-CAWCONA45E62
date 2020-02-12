@@ -5,5 +5,5 @@
 
 export const environment = {
   production: false,
-  api: 'https://my-json-server.typicode.com/nitaicharan/Udemy-CAWCONA45E62/',
+  api: 'https://my-json-server.typicode.com/nitaicharan/Udemy-CAWCONA45E62',
 };

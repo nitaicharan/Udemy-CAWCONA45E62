@@ -2,7 +2,7 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { RouterModule, PreloadAllModules } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
-import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule, LOCALE_ID } from '@angular/core';
 
 
@@ -43,7 +43,7 @@ import { LocationStrategy, HashLocationStrategy } from "@angular/common";
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    HttpModule,
+    HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
     RouterModule.forRoot(ROUTES, { preloadingStrategy: PreloadAllModules }),
