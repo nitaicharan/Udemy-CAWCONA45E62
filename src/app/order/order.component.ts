@@ -22,7 +22,7 @@ export class OrderComponent implements OnInit {
     { label: 'Cartão Refeição', value: 'REF' }
   ];
 
-  delivery: number = 8
+  delivery = 8
 
   constructor(private orderService: OrderService, private router: Router, private formBuilder: FormBuilder) { }
 
@@ -39,7 +39,9 @@ export class OrderComponent implements OnInit {
       validator: (group: AbstractControl): { [key: string]: boolean } => {
         const email = group.get('email')
         const emailConfirmation = group.get('emailConfirmation')
+        // tslint:disable-next-line: curly
         if (!email || !emailConfirmation) return undefined
+        // tslint:disable-next-line: curly
         if (email.value !== emailConfirmation.value) return { emailsNotMatch: true }
         return undefined
       }
