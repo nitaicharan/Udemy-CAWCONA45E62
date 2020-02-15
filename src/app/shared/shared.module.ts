@@ -1,14 +1,15 @@
-import { NgModule, ModuleWithProviders } from "@angular/core";
-import { InputContanerComponent } from "./input-contaner/input-contaner.component";
-import { RatingComponent } from "./rating/rating.component";
-import { RadioComponent } from "./radio/radio.component";
-import { ReactiveFormsModule, FormsModule } from "@angular/forms";
-import { CommonModule } from "@angular/common";
-import { OrderService } from "./order.service";
-import { RestaurantsService } from "./restaurants.service";
-import { ShoppingCartService } from "./shopping-cart.service";
-import { SnackbarComponent } from "./messages/snackbar/snackbar.component";
-import { NotificationService } from "./messages/notification.service";
+import { NgModule, ModuleWithProviders } from '@angular/core';
+import { InputContanerComponent } from './input-contaner/input-contaner.component';
+import { RatingComponent } from './rating/rating.component';
+import { RadioComponent } from './radio/radio.component';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { OrderService } from './order.service';
+import { RestaurantsService } from './restaurants.service';
+import { ShoppingCartService } from './shopping-cart.service';
+import { SnackbarComponent } from './messages/snackbar/snackbar.component';
+import { NotificationService } from './messages/notification.service';
+import { LoginService } from '../security/login/login.service';
 
 
 @NgModule({
@@ -39,6 +40,7 @@ export class SharedModule {
         RestaurantsService,
         ShoppingCartService,
         NotificationService,
+        LoginService,
       ]
     }
   }

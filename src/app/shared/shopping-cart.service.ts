@@ -1,7 +1,7 @@
-import { CartItem } from "../restaurant-detail/shopping-cart/cart-item.model";
-import { MenuItem } from "../restaurant-detail/menu-item/menu-item.model";
-import { Injectable } from "@angular/core";
-import { NotificationService } from "./messages/notification.service";
+import { CartItem } from '../restaurant-detail/shopping-cart/cart-item.model';
+import { MenuItem } from '../restaurant-detail/menu-item/menu-item.model';
+import { Injectable } from '@angular/core';
+import { NotificationService } from './messages/notification.service';
 
 @Injectable()
 export class ShoppingCartService {
