@@ -10,6 +10,7 @@ export class InputContanerComponent implements OnInit, AfterContentInit {
   @ContentChild(FormControlName) control: FormControlName;
   @Input() errorMessage: string
   @Input() label: string
+  @Input() showTip = true;
   input: any;
 
   constructor() { }
