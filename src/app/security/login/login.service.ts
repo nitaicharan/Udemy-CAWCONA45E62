@@ -4,13 +4,14 @@ import { User } from 'app/security/login/user.model';
 import { HttpClient } from '@angular/common/http';
 import { MEAT_API } from 'app/app.api';
 import { NotificationService } from 'app/shared/messages/notification.service';
+import { Router } from '@angular/router';
 
 @Injectable()
 export class LoginService {
 
   user: User;
 
-  constructor(private http: HttpClient, private notificationService: NotificationService) { }
+  constructor(private http: HttpClient, private notificationService: NotificationService, private router: Router) { }
 
   login(email: string, password: string): Observable<User> {
     return this.http.post<User>(`${MEAT_API}/login`, { email: email, password: password }).do(user => this.user = user)
@@ -19,4 +20,5 @@ export class LoginService {
   isLoggedIn = (): boolean => this.user !== undefined;
 
   getToken = (): string => this.user.acessToken;
+  handleLogin = (nextPath?: string) => this.router.navigate(['/login', nextPath]);
 }
