@@ -3,7 +3,7 @@ import { RouterModule, PreloadAllModules } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { NgModule, LOCALE_ID } from '@angular/core';
+import { NgModule, LOCALE_ID, ErrorHandler } from '@angular/core';
 
 
 import { RestaurantsComponent } from './restaurants/restaurants.component';
@@ -25,6 +25,7 @@ import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { LoginComponent } from './security/login/login.component';
 import { UserDetailComponent } from './header/user-detail/user-detail.component';
 import { AuthInterceptor } from './security/auth.interceptor';
+import { ApplicationErrorHandler } from './app.error-handler';
 
 
 
@@ -59,6 +60,7 @@ import { AuthInterceptor } from './security/auth.interceptor';
     { provide: LOCALE_ID, useValue: 'pt-BR' },
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
     { provide: LocationStrategy, useClass: HashLocationStrategy },
+    { provide: ErrorHandler, useClass: ApplicationErrorHandler }
   ],
   bootstrap: [AppComponent]
 })

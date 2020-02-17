@@ -16,8 +16,6 @@ export class OrderService {
   increaseQty = (item: CartItem) => this.cartService.increaseQty(item)
   decreaseQty = (item: CartItem) => this.cartService.decreaseQty(item)
   remove = (item: CartItem) => this.cartService.removeItem(item)
-  checkOrder(order: Order): Observable<string> {
-    return this.http.post<Order>(`${MEAT_API}/orders`, order).map(order => order.id)
-  }
+  checkOrder = (order: Order): Observable<string> => this.http.post<Order>(`${MEAT_API}/orders`, order).map((o: Order) => o.id)
   clear = () => this.cartService.clear()
 }

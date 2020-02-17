@@ -7,6 +7,7 @@ import { Restaurant } from '../restaurants/restaurant/restaurant.model';
 import { MEAT_API } from 'app/app.api';
 import { MenuItem } from 'app/restaurant-detail/menu-item/menu-item.model';
 import { HttpClient, HttpParams } from '@angular/common/http';
+
 @Injectable()
 export class RestaurantsService {
   private rests: Restaurant[];
