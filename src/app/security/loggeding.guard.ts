@@ -6,11 +6,11 @@ import { LoginService } from './login/login.service';
 export class LoggedInGuard implements CanLoad, CanActivate {
 
   canAcess(path: string) {
-    const notLoggedIn = !this.loginService.isLoggedIn()
-    if (notLoggedIn) {
-      this.loginService.handleLogin(btoa(`/${path}`));
+    const logged = this.loginService.isLoggedIn()
+    if (!logged) {
+      this.loginService.handleLogin(`/${path}`);
     }
-    return notLoggedIn;
+    return logged;
   }
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
