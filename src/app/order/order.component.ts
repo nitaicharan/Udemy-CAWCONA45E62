@@ -15,6 +15,7 @@ export class OrderComponent implements OnInit {
   orderForm: FormGroup
   emailPattern = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
   numberPattern = /^[0-9]*$/
+  orderId: string;
 
   paymentOptions: RadioOption[] = [
     { label: 'Dinheiro', value: 'MON' },
@@ -60,4 +61,5 @@ export class OrderComponent implements OnInit {
       this.orderService.clear()
     })
   }
+  isOrderNotCompleted = (): boolean => this.orderId === undefined;
 }
