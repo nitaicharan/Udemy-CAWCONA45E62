@@ -17,11 +17,7 @@ export class OrderService {
   decreaseQty = (item: CartItem) => this.cartService.decreaseQty(item)
   remove = (item: CartItem) => this.cartService.removeItem(item)
   checkOrder(order: Order): Observable<string> {
-    let httpHeader = new HttpHeaders();
-    if (this.loginService.isLoggedIn()) {
-      httpHeader = httpHeader.set('Authorization', `Bearer ${this.loginService.getToken()}`);
-    }
-    return this.http.post<Order>(`${MEAT_API}/orders`, order, { headers: httpHeader }).map(order => order.id)
+    return this.http.post<Order>(`${MEAT_API}/orders`, order).map(order => order.id)
   }
   clear = () => this.cartService.clear()
 }

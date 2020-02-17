@@ -7,7 +7,7 @@ export class LeaveOrderGuard implements CanDeactivate<OrderComponent>{
     currentRoute: ActivatedRouteSnapshot,
     currentState: RouterStateSnapshot
   ): boolean {
-    return (component.isOrderNotCompleted()) ? window.confirm('Deseja realmente sair?') : false;
+    return (component.isOrderNotCompleted()) ? window.confirm('Deseja realmente sair desta página?') : false;
   }
   constructor() { }
 }

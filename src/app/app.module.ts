@@ -2,7 +2,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, PreloadAllModules } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule, LOCALE_ID } from '@angular/core';
 
 
@@ -24,6 +24,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { LoginComponent } from './security/login/login.component';
 import { UserDetailComponent } from './header/user-detail/user-detail.component';
+import { AuthInterceptor } from './security/auth.interceptor';
 
 
 
@@ -56,6 +57,7 @@ import { UserDetailComponent } from './header/user-detail/user-detail.component'
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'pt-BR' },
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
     { provide: LocationStrategy, useClass: HashLocationStrategy },
   ],
   bootstrap: [AppComponent]
