@@ -10,9 +10,9 @@ import { ShoppingCartService } from './shopping-cart.service';
 import { SnackbarComponent } from './messages/snackbar/snackbar.component';
 import { NotificationService } from './messages/notification.service';
 import { LoginService } from '../security/login/login.service';
-import { LoggedInGuard } from 'app/security/loggeding.guard';
-import { LeaveOrderGuard } from 'app/order/leave-order.guard';
-import { AuthInterceptor } from 'app/security/auth.interceptor';
+import { LoggedInGuard } from '../security/loggeding.guard';
+import { LeaveOrderGuard } from '../order/leave-order.guard';
+import { AuthInterceptor } from '../security/auth.interceptor';
 
 
 @NgModule({
@@ -35,7 +35,7 @@ import { AuthInterceptor } from 'app/security/auth.interceptor';
   ]
 })
 export class SharedModule {
-  static forRoot(): ModuleWithProviders {
+  static forRoot(): ModuleWithProviders<SharedModule> {
     return {
       ngModule: SharedModule,
       providers: [
@@ -48,6 +48,6 @@ export class SharedModule {
         LeaveOrderGuard,
         AuthInterceptor,
       ]
-    }
+    };
   }
 }

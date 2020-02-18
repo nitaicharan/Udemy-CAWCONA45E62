@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { LoginService } from 'app/security/login/login.service';
-import { NotificationService } from 'app/shared/messages/notification.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { LoginService } from './login.service';
+import { NotificationService } from 'src/app/shared/messages/notification.service';
 
 @Component({
   selector: 'mt-login',
@@ -14,7 +14,8 @@ export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   navigateTo: string;
 
-  constructor(private fb: FormBuilder,
+  constructor(
+    private fb: FormBuilder,
     private loginService: LoginService,
     private notificationService: NotificationService,
     private activatedRoute: ActivatedRoute,
@@ -25,8 +26,8 @@ export class LoginComponent implements OnInit {
     this.loginForm = this.fb.group({
       email: this.fb.control('', [Validators.required, Validators.email]),
       password: this.fb.control('', [Validators.required])
-    })
-    this.navigateTo = this.activatedRoute.snapshot.params['to'] || btoa('/');
+    });
+    this.navigateTo = this.activatedRoute.snapshot.params.to || btoa('/');
   }
 
   login() {

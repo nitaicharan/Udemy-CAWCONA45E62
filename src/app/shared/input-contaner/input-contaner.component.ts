@@ -8,8 +8,8 @@ import { NgModel, FormControlName } from '@angular/forms';
 export class InputContanerComponent implements OnInit, AfterContentInit {
   @ContentChild(NgModel) model: NgModel;
   @ContentChild(FormControlName) control: FormControlName;
-  @Input() errorMessage: string
-  @Input() label: string
+  @Input() errorMessage: string;
+  @Input() label: string;
   @Input() showTip = true;
   input: any;
 
@@ -22,9 +22,9 @@ export class InputContanerComponent implements OnInit, AfterContentInit {
   hasError = (): boolean => this.input.invalid && (this.input.dirty || this.input.touched);
 
   ngAfterContentInit(): void {
-    this.input = this.model || this.control
+    this.input = this.model || this.control;
     if (!this.input === undefined) {
-      throw new Error('Esse componente precisa ser usado com uma directiva NgModel ou FormControlName')
+      throw new Error('Esse componente precisa ser usado com uma directiva NgModel ou FormControlName');
     }
   }
 }

@@ -1,7 +1,7 @@
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, PreloadAllModules } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule, LOCALE_ID, ErrorHandler } from '@angular/core';
 
@@ -10,7 +10,7 @@ import { RestaurantsComponent } from './restaurants/restaurants.component';
 import { RestaurantComponent } from './restaurants/restaurant/restaurant.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { HomeComponent } from './home/home.component'
+import { HomeComponent } from './home/home.component';
 import { AppComponent } from './app.component';
 import { ROUTES } from './app.routers';
 import { RestaurantDetailComponent } from './restaurant-detail/restaurant-detail.component';
@@ -26,8 +26,6 @@ import { LoginComponent } from './security/login/login.component';
 import { UserDetailComponent } from './header/user-detail/user-detail.component';
 import { AuthInterceptor } from './security/auth.interceptor';
 import { ApplicationErrorHandler } from './app.error-handler';
-
-
 
 @NgModule({
   declarations: [

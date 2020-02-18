@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { trigger, state, style, transition, animate, keyframes } from '@angular/animations'
-import { ShoppingCartService } from 'app/shared/shopping-cart.service';
+import { trigger, state, style, transition, animate, keyframes } from '@angular/animations';
+import { ShoppingCartService } from 'src/app/shared/shopping-cart.service';
 
 @Component({
   selector: 'mt-shopping-cart',
@@ -23,7 +23,7 @@ import { ShoppingCartService } from 'app/shared/shopping-cart.service';
 })
 export class ShoppingCartComponent implements OnInit {
 
-  rowState = 'ready'
+  rowState = 'ready';
 
   constructor(private service: ShoppingCartService) { }
 
