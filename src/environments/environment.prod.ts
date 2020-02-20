@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  api: ''
+  api: 'https://udemy-cawcona45e63.herokuapp.com'
 };

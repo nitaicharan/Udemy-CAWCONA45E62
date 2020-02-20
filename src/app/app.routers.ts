@@ -10,10 +10,10 @@ import { LoginComponent } from './security/login/login.component';
 import { LoggedInGuard } from './security/loggeding.guard';
 
 export const ROUTES: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'login', component: LoginComponent },
   { path: 'login/:to', component: LoginComponent },
+  { path: 'login', component: LoginComponent },
   { path: 'restaurants', component: RestaurantsComponent },
+  { path: '', component: HomeComponent },
   {
     path: 'restaurants/:id', component: RestaurantDetailComponent,
     children: [
