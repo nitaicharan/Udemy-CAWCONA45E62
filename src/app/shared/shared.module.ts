@@ -1,53 +1,25 @@
-import { NgModule, ModuleWithProviders } from '@angular/core';
-import { InputContanerComponent } from './input-contaner/input-contaner.component';
-import { RatingComponent } from './rating/rating.component';
-import { RadioComponent } from './radio/radio.component';
-import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { OrderService } from './order.service';
-import { RestaurantsService } from './restaurants.service';
-import { ShoppingCartService } from './shopping-cart.service';
-import { SnackbarComponent } from './messages/snackbar/snackbar.component';
-import { NotificationService } from './messages/notification.service';
-import { LoginService } from '../security/login/login.service';
-import { LoggedInGuard } from '../security/loggeding.guard';
-import { LeaveOrderGuard } from '../order/leave-order.guard';
-import { AuthInterceptor } from '../security/auth.interceptor';
+import { NgModule } from '@angular/core';
+import { InputContanerComponent } from './components/input-contaner/input-contaner.component';
+import { RadioComponent } from './components/radio/radio.component';
+import { RatingComponent } from './components/rating/rating.component';
+import { SnackbarComponent } from './components/snackbar/snackbar.component';
+
 
 
 @NgModule({
   declarations: [
-    InputContanerComponent,
     RatingComponent,
+    InputContanerComponent,
     RadioComponent,
-    SnackbarComponent
+    SnackbarComponent,
   ],
-  imports: [
-    FormsModule,
-    ReactiveFormsModule,
-    CommonModule,
-  ],
+  imports: [CommonModule],
   exports: [
-    InputContanerComponent,
     RatingComponent,
+    InputContanerComponent,
     RadioComponent,
-    SnackbarComponent
+    SnackbarComponent,
   ]
 })
-export class SharedModule {
-  static forRoot(): ModuleWithProviders<SharedModule> {
-    return {
-      ngModule: SharedModule,
-      providers: [
-        OrderService,
-        RestaurantsService,
-        ShoppingCartService,
-        NotificationService,
-        LoginService,
-        LoggedInGuard,
-        LeaveOrderGuard,
-        AuthInterceptor,
-      ]
-    };
-  }
-}
+export class SharedModule { }
