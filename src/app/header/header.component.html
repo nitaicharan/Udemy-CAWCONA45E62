@@ -1,21 +1,28 @@
 <header class="main-header">
-  <nav class="navbar navbar-static-top">
+  <nav class="navbar navbar-expand-md navbar-dark bg-red">
     <div class="container">
       <div class="navbar-header">
-        <a [routerLink]="['/']" class="navbar-brand"><b>Meat</b></a>
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
-          <i class="fa fa-bars"></i>
-        </button>
+        <a [routerLink]="['/']" class="navbar-brand">
+          <span class="brand-tex">Meat</span>
+        </a>
       </div>
 
+      <button class="navbar-toggler order-1" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
       <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+      <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="nav navbar-nav">
-          <li routerLinkActive="active"><a [routerLink]="['/restaurants']">Restaurantes</a></li>
-          <li><a [routerLink]="['/about']">Sobre</a></li>
+          <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link" [routerLink]="['/restaurants']">Restaurantes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/about']">Sobre</a>
+          </li>
         </ul>
       </div>
-      <!-- /.navbar-collapse -->
 
       <mt-user-detail></mt-user-detail>
     </div>

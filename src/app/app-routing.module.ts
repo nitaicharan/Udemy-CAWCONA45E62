@@ -1,15 +1,17 @@
+import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
-import { Routes } from '@angular/router';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { LoginComponent } from './security/login/login.component';
 import { RestaurantsComponent } from './restaurants/restaurants.component';
 import { RestaurantDetailComponent } from './restaurant-detail/restaurant-detail.component';
 import { MenuComponent } from './restaurant-detail/menu/menu.component';
 import { ReviewsComponent } from './restaurant-detail/reviews/reviews.component';
-import { OrderSummaryComponent } from './order-summary/order-summary.component';
-import { NotFoundComponent } from './not-found/not-found.component';
-import { LoginComponent } from './security/login/login.component';
 import { LoggedInGuard } from './security/loggeding.guard';
+import { OrderSummaryComponent } from './order-summary/order-summary.component';
 
-export const ROUTES: Routes = [
+
+const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'login/:to', component: LoginComponent },
@@ -32,3 +34,9 @@ export const ROUTES: Routes = [
   { path: 'about', loadChildren: () => import('./about/about.module').then(m => m.AboutModule) },
   { path: '**', component: NotFoundComponent },
 ];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }

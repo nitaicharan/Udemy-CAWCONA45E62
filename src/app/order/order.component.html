@@ -64,11 +64,8 @@
               placeholder="Complemento">
           </mt-input-contaner>
         </div>
-        <!-- /.col -->
       </div>
-      <!-- /.row -->
 
-      <!-- Table row -->
       <div class="row">
         <div class="col-xs-12">
           <p class="lead">Itens do Pedido:</p>
@@ -76,10 +73,8 @@
         <mt-order-items [items]="cartItems()" (increaseQty)="increaseQty($event)" (decreaseQty)="decreaseQty($event)"
           (remove)="remove($event)"></mt-order-items>
       </div>
-      <!-- /.row -->
 
       <div class="row">
-        <!-- accepted payments column -->
         <div class="col-sm-6 col-xs-12">
           <p class="lead">Formas de Pagamento:</p>
 
@@ -88,12 +83,10 @@
           </div>
 
         </div>
-        <!-- /.col -->
         <div class="col-sm-6 col-xs-12">
           <p class="lead">Frete e Total:</p>
           <mt-delivery-costs [delivery]="delivery" [itemsValue]="itemsValue()"></mt-delivery-costs>
         </div>
-        <!-- /.col -->
       </div>
       <p>
         order works!

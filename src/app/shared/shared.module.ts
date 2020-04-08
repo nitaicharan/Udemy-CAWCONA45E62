@@ -10,9 +10,9 @@ import { ShoppingCartService } from './shopping-cart.service';
 import { SnackbarComponent } from './messages/snackbar/snackbar.component';
 import { NotificationService } from './messages/notification.service';
 import { LoginService } from '../security/login/login.service';
-import { LoggedInGuard } from '../security/loggeding.guard';
-import { LeaveOrderGuard } from '../order/leave-order.guard';
 import { AuthInterceptor } from '../security/auth.interceptor';
+import { LoggedInGuard } from "../security/loggeding.guard";
+import { LeaveOrderGuard } from '../order/leave-order.guard';
 
 
 @NgModule({
@@ -44,9 +44,9 @@ export class SharedModule {
         ShoppingCartService,
         NotificationService,
         LoginService,
+        AuthInterceptor,
         LoggedInGuard,
         LeaveOrderGuard,
-        AuthInterceptor,
       ]
     };
   }

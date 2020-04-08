@@ -1,11 +1,11 @@
-import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Router, NavigationEnd } from '@angular/router';
-import { User } from './user.model';
-import { NotificationService } from 'src/app/shared/messages/notification.service';
+import { Injectable } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { filter, tap } from 'rxjs/operators';
-import { MEAT_API } from 'src/app/app.api';
+import { NotificationService } from 'src/app/shared/messages/notification.service';
+import { User } from './user.model';
+import { environment } from 'src/environments/environment';
 
 @Injectable()
 export class LoginService {
@@ -24,7 +24,7 @@ export class LoginService {
   }
 
   login(email: string, password: string): Observable<User> {
-    return this.http.post<User>(`${MEAT_API}/login`, { email, password }).pipe(tap(user => this.user = user));
+    return this.http.post<User>(`${environment.api}/login`, { email, password }).pipe(tap(user => this.user = user));
   }
 
   getName = (): string => this.user.name;

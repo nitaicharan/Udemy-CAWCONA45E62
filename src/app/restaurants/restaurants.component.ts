@@ -4,9 +4,9 @@ import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 
 import { Restaurant } from './restaurant/restaurant.model';
 
-import { RestaurantsService } from '../shared/restaurants.service';
 import { debounceTime, distinctUntilChanged, switchMap, catchError } from 'rxjs/operators';
 import { from } from 'rxjs';
+import { RestaurantsService } from '../shared/restaurants.service';
 
 @Component({
   selector: 'mt-restaurants',

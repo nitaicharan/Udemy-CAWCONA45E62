@@ -1,16 +1,10 @@
-import {Component, OnInit} from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'mt-root',
-  templateUrl: 'app.component.html'
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
-
-  content = 'Welcome do Meat App!';
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+export class AppComponent {
+  title = 'meat';
 }
